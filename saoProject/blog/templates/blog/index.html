@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block appcss %}
+<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+{% endblock appcss %}
+{% block jumbotronapp %}
+<section id="home">
+     <div class="jumbotron py-5">
+       <h1 class="display-4 fs-1 fw-bold"><strong>Blog</strong></h1>
+       {% comment %} <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> {% endcomment %}
+     </div>
+{% endblock jumbotronapp %}

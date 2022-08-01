@@ -1,12 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>SAO Project</title>
-</head>
-<body>
-     <h1>Selamat datang di SAO Project</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    {% include './snippets/styles.html' %} 
+
+    {% block appcss %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock appcss %}
+    <title>SAO Project</title>
+  </head>
+  <body>
+    {% comment %} navbar {% endcomment %} 
+    {% include './snippets/navbar.html' %} 
+    {% comment %} end navbar {% endcomment %}
+
+    {% comment %} jumbotron {% endcomment %}
+    {% block jumbotronapp %}
+    <section id="home">
+      <div class="jumbotron py-5">
+        <h1 class="display-4 fs-1 fw-bold"><strong>Welcome to Aincrad</strong></h1>
+        {% comment %} <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> {% endcomment %}
+      </div>
+    </section>
+    {% endblock jumbotronapp %}
+    {% comment %} end jumbotron {% endcomment %}
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    {% include './snippets/js.html' %}
+  </body>
 </html>
