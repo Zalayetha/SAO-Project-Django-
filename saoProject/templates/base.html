@@ -12,7 +12,9 @@
     {% block appcss %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock appcss %}
+    {% block title %}
     <title>SAO Project</title>
+    {% endblock title %}
   </head>
   <body>
     {% comment %} navbar {% endcomment %} 
@@ -28,6 +30,9 @@
       </div>
     </section>
     {% endblock jumbotronapp %}
+
+    {% block content %}
+    {% endblock content %}
     {% comment %} end jumbotron {% endcomment %}
     <!-- Option 1: Bootstrap Bundle with Popper -->
     {% include './snippets/js.html' %}
