@@ -27,17 +27,17 @@
       <div class="container mt-3 p-3 content ">
         <ul class="nav justify-content-center">
           <li class="nav-item">
-            <a href="" class="nav-link text-white">All</a>
+            <a href="{% url 'blog:index' %}" class="nav-link text-white">All</a>
           </li>
           {% for data in Category  %}
           <li class="nav-item">
-            <a href="/blog/category/{{data.category}}" class="nav-link text-white">{{data.category}}</a>
+            <a href="{% url 'blog:category' categoryInput=data.category %}" class="nav-link text-white">{{data.category}}</a>
           </li>
           {% endfor %}
         </ul>
         <div class="container mt-5">
          {% for post in Post  %}
-          <a href="/blog/post/{{post.slug}}">
+          <a href="{% url 'blog:detail' slugInput=post.slug %}">
             <h4 class="text-center text-white subject"><strong>{{post.subject}}</strong></h4>
           </a>
          <p class="text-center">{{post.category}}</p>

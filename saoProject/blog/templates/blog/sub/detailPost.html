@@ -27,7 +27,7 @@
       <div class="container mt-3 p-3 content">
         <ul class="nav justify-content-center">
           <li class="nav-item">
-            <a href="/blog" class="nav-link text-white">All</a>
+            <a href="{% url 'index' %}" class="nav-link text-white">All</a>
           </li>
           {% for data in Category  %}
           <li class="nav-item">
