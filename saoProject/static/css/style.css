@@ -22,4 +22,11 @@ body {
   color: whitesmoke;
 }
 
+.nav-link{
+  border-bottom: 2px solid transparent;
 
+}
+.nav-link:hover{
+  border-bottom: 2px solid white;
+
+}

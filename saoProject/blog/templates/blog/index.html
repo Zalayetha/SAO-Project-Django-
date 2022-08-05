@@ -34,6 +34,9 @@
             <a href="{% url 'blog:category' categoryInput=data.category %}" class="nav-link text-white">{{data.category}}</a>
           </li>
           {% endfor %}
+          <li class="nav-item">
+            <a href="{% url 'blog:create' %}" class="nav-link text-white">Create New</a>
+          </li>
         </ul>
         <div class="container mt-5">
          {% for post in Post  %}
