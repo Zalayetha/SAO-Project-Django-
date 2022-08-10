@@ -25,13 +25,14 @@
           <h2 class="text-center"><strong>Create Post</strong></h2>
           <hr size="5" width="200rem" style="margin: 0 auto; color: white" />
           <div class="container formContact mt-3 p-5">
-               <form action="" method="post">
+               <form method="post">
                     {% csrf_token %}
                     
-                    {% for DataPost in Data   %}
-                    <div class="mb-3 mx-3">
-                         {{DataPost.label_tag}} {{DataPost}}
-                    </div>
+                    {% for dataCategory in Data  %}
+                         <div class="mb-3">
+                              {{dataCategory.label}}
+                              {{dataCategory}}
+                         </div>
                     {% endfor %}
                     <br>
                     <div class="text-center">

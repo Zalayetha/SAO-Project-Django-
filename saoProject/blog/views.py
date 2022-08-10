@@ -1,7 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Post
 from .forms import CreatePost
-from django.http import HttpResponseRedirect 
 # Create your views here.
 def index(request):
      post = Post.objects.all()
@@ -43,15 +42,13 @@ def detailPost(request,slugInput):
      return render(request,'blog/sub/detailPost.html',context)
 
 def create(request):
-     data = CreatePost()
+     data = CreatePost(request.POST or None)
      if request.method == 'POST':
-          Post.objects.create(
-               subject = request.POST.get('subject'), 
-               category = request.POST.get('category'),
-               body = request.POST.get('body'),
-          )
-          return HttpResponseRedirect("/blog/")
-
+          if data.is_valid():
+               data.save()
+               # print("{},{}".format(data.cleaned_data,request.POST))
+               return redirect('blog:index')
+            
      context ={
           'title' : 'Blog',
           'subTitle':'Create Post',
