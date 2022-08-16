@@ -8,33 +8,30 @@
 
     <!-- Bootstrap CSS -->
     {% include './snippets/styles.html' %} 
-
     {% block appcss %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% endblock appcss %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% endblock appcss %} 
     {% block title %}
-    <title>SAO Project</title>
+    <title>SAO Project </title>
     {% endblock title %}
   </head>
   <body>
-    {% comment %} navbar {% endcomment %} 
-    {% include './snippets/navbar.html' %} 
-    {% comment %} end navbar {% endcomment %}
-
-    {% comment %} jumbotron {% endcomment %}
+    {% block navbar %}
+    {% include './snippets/navbar_anon.html' %}
+    {% endblock navbar %}
     {% block jumbotronapp %}
     <section id="home">
       <div class="jumbotron py-5">
-        <h1 class="display-4 fs-1 fw-bold"><strong>Welcome to Aincrad</strong></h1>
+        <h1 class="display-4 fs-1 fw-bold"><strong>Welcome to Aincrad {{param}}</strong></h1>
+        <h4 class=" fs-1 fw-bold"><strong>Hai {{user}}</strong></h4>
         {% comment %} <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> {% endcomment %}
       </div>
     </section>
     {% endblock jumbotronapp %}
-
-    {% block content %}
-    {% endblock content %}
-    {% comment %} end jumbotron {% endcomment %}
+     {% block content %} 
+     {% endblock content %} 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    {% block jsapp %}{% endblock jsapp %} 
     {% include './snippets/js.html' %}
   </body>
 </html>

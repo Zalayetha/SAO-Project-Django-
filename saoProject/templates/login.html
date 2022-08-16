@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login Page</title>
+     {% include './snippets/styles.html' %}
+     <link rel="stylesheet" href="{% static 'css/styleLogin.css' %}">
+</head>
+<body>
+     <div class="container bg-dark mt-5 text-light p-5">
+          <h1 class='text-center mb-5'>LOGIN PAGE SAO DB</h1>
+          <h4>Halo {{user}}</h4>
+          <form method='Post'>
+               {% csrf_token %}
+               <table>
+                    <tr>
+                         <td>
+                              <label for="username">Username   :</label>
+                              <input type="text" name='username' id='username'>
+                         </td>
+                    </tr>
+                    
+                    <tr>
+                         <td>
+                              <label for="password">Password   :</label>
+                              <input type="password" name='password' id='password'>
+                         </td>
+                    </tr>
+               </table>
+               <br>
+               <button type='submit'>Login</button>
+          </form>
+          <br>
+          {% comment %} <form method="POST">
+               {% csrf_token %}
+               <input type="submit" name="guest" value="Sign in as Guest">
+          </form> {% endcomment %}
+     </div>
+     {% include './snippets/js.html' %}
+</body>
+</html>

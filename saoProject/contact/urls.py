@@ -1,7 +1,7 @@
 from django.urls import path,re_path
-from . import views
+from .views import ClassView
 urlpatterns = [
-    path("",views.index,name='index'),
+    path("",ClassView.as_view(template_name='contact/index.html'),name='index'),
 ]
 
 app_name = 'contact'

@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% load static %} {% block appcss %}
+<link rel="stylesheet" href="{% static 'profilechar/css/style.css' %}" />
+{% endblock appcss %} {% block title %}
+<title>{{title}}</title>
+{% endblock title %} {% block jumbotronapp %}
+<section id="home">
+  <div class="jumbotron py-5">
+    <h1 class="display-4 fs-1 fw-bold"><strong>{{title}}</strong></h1>
+    <h2 class="fs-3 fw-bold text-white"><strong>{{subTitle}}</strong></h2>
+    {% comment %} <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> {% endcomment %}
+  </div>
+</section>
+{% endblock jumbotronapp %} {% block content %}
+<div class="container mt-5">
+  <div id="carouselExampleControls" class="carousel slide p-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row-auto text-light text-center">
+          <div class="col">
+            <img src="{% static 'profilechar/img/kirito.png' %}" alt="" width="400" height="400" />
+          </div>
+          <div class="col my-5 p-3">
+            <p>
+              Kirito was chosen to be one of the one thousand beta testers for the closed beta of Sword Art Online, the first ever Virtual Reality Massively Multiplayer Online Role-Playing Game (VRMMORPG) for the NerveGear, and later joined
+              the official version of the game. He thus became one of the 10,000 players who were trapped in Sword Art Online, where he remained a solo player for the majority of the game, willingly taking on the role of a Beater to reduce
+              discrimination against other former beta testers, as well as actively taking part in Boss battles as one of the Clearers.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row-auto text-light text-center">
+          <div class="col">
+            <img src="{% static 'profilechar/img/sinon.png' %}" alt="" width="350" height="350" />
+          </div>
+          <div class="col my-5 p-3">
+            <p>
+              Asada Shino (朝田 詩乃, Asada Shino?), known as Sinon (シノン, Shinon?) in «Gun Gale Online» (GGO), ALfheim Online (ALO), as well as «Project Alicization», where she had temporarily used the Solus (ソルス, Sorusu?) account, is
+              the deuteragonist of the Phantom Bullet Arc and one of the main characters in the War of the Underworld sub-arc of the Alicization Arc. She is a skilled Virtual Reality game player, who began playing Gun Gale Online based on
+              the suggestion from her friend, Shinkawa Kyouji, in an attempt to overcome her trauma concerning guns. After the events of the Phantom Bullet Arc, she began playing «ALfheim Online» as a Cait Sith archer, capable of hitting
+              targets two hundred meters away with a bow that should only be able to shoot arrows accurately at a maximum distance of one hundred meters.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row-auto text-light text-center">
+          <div class="col">
+            <img src="{% static 'profilechar/img/asuna.png' %}" alt="" width="400" height="400" />
+          </div>
+          <div class="col my-5 p-3">
+            <p>
+              Yuuki Asuna (結城 明日奈, Yūki Asuna?), known as Asuna (アスナ, Asuna?) in «Sword Art Online» (SAO), «ALfheim Online» (ALO), as well as «Project Alicization», where she had temporarily used the Stacia (ステイシア, Suteishia?)
+              account, is the main heroine of the Sword Art Online series[7], the deuteragonist of the Aincrad Arc, as well as the protagonist of the Mother's Rosario side story. She is the daughter of the former CEO of RECT Inc.. Asuna was
+              one of the 10,000 players trapped in «Sword Art Online», where she was the sub-leader of the «Knights of the Blood» (KoB) guild.[3] Her skills with the rapier had her earned her the nickname «The Flash» (閃光, Senkō?).[3]
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+{% endblock content %}
