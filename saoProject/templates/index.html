@@ -1,1 +1,12 @@
 {% extends 'base.html' %}
+
+
+{% block navbar %}
+
+{% if user.is_authenticated %}
+     {% include 'snippets/navbar_user.html' %}
+{% else %}
+     {% include 'snippets/navbar_anon.html' %}
+{% endif %}
+     
+{% endblock navbar %}

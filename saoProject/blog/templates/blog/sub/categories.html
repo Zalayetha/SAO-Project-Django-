@@ -8,6 +8,16 @@
 {% block title %}
 <title>{{title}}</title>{% endblock title %}
 
+{% block navbar %}
+
+{% if user.is_authenticated %}
+     {% include 'snippets/navbar_user.html' %}
+{% else %}
+     {% include 'snippets/navbar_anon.html' %}
+{% endif %}
+     
+{% endblock navbar %}
+
 {% block jumbotronapp %}
 <section id="home">
      <div class="jumbotron py-5">

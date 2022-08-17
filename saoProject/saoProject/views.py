@@ -5,9 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 
 # @login_required(login_url='login')
 def index(request):
-     if request.user.is_authenticated:
-          return render(request,'index_user.html')
-
+     # print(request.user.group)
      return render(request,'index.html')
 
 def loginPage(request):
@@ -32,7 +30,7 @@ def loginPage(request):
                
      return render(request,'login.html')
 
-@login_required(login_url='index')
+@login_required(login_url='index',redirect_field_name='RedirectTo')
 def logoutPage(request):
      if request.method == "POST":
           if request.POST['logout'] == 'Submit':

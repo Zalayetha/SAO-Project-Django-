@@ -3,15 +3,17 @@ from .contact import ContactPerson
 from django.views import View
 from django.views.generic.base import TemplateView
 # Create your views here.
-# def index(request):
-#      contact = ContactPerson()
-#      print(request.POST)
-#      context={
-#           'title' : 'Contact',
-#           'subTitle': "Welcome To Underworld Contact Form",
-#           'Contact' : contact,
-#      }
-#      return render(request,"contact/index.html",context)
+def index(request):
+     contact = ContactPerson()
+     context={
+          'title' : 'Contact',
+          'subTitle': "Welcome To Underworld Contact Form",
+          'Contact' : contact,
+     }
+     # if request.user.is_authenticated:
+     #      return render(request,"contact/index_user.html",context)
+          
+     return render(request,"contact/index.html",context)
 
 
 # class ClassView(View):
@@ -29,16 +31,16 @@ from django.views.generic.base import TemplateView
 #           return render(request,self.template_name,self.context)
 
 
-class ClassView(TemplateView):
-     template_name=''
-     contact = ContactPerson()
-     def get_context_data(self):
-          context = {
-               'title':'Contact',
-               'subTitle':'Welcome To Underworld Contact Form',
-               'Contact':self.contact,
-          }
-          return context
+# class ClassView(TemplateView):
+#      template_name=''
+#      contact = ContactPerson()
+#      def get_context_data(self):
+#           context = {
+#                'title':'Contact',
+#                'subTitle':'Welcome To Underworld Contact Form',
+#                'Contact':self.contact,
+#           }
+#           return context
 
         
 

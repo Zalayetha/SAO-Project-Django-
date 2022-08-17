@@ -1,8 +1,25 @@
-{% extends 'base.html' %} {% load static %} {% block appcss %}
+{% extends 'index.html' %}
+{% load static %} 
+
+{% block appcss %}
 <link rel="stylesheet" href="{% static 'profilechar/css/style.css' %}" />
-{% endblock appcss %} {% block title %}
+{% endblock appcss %} 
+
+{% block title %}
 <title>{{title}}</title>
-{% endblock title %} {% block jumbotronapp %}
+{% endblock title %} 
+
+{% block navbar %}
+
+{% if user.is_authenticated %}
+     {% include 'snippets/navbar_user.html' %}
+{% else %}
+     {% include 'snippets/navbar_anon.html' %}
+{% endif %}
+     
+{% endblock navbar %}
+
+{% block jumbotronapp %}
 <section id="home">
   <div class="jumbotron py-5">
     <h1 class="display-4 fs-1 fw-bold"><strong>{{title}}</strong></h1>
@@ -10,7 +27,9 @@
     {% comment %} <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> {% endcomment %}
   </div>
 </section>
-{% endblock jumbotronapp %} {% block content %}
+{% endblock jumbotronapp %} 
+
+{% block content %}
 <div class="container mt-5">
   <div id="carouselExampleControls" class="carousel slide p-5" data-bs-ride="carousel">
     <div class="carousel-inner">
